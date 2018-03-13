@@ -23,9 +23,13 @@ public class Teacher extends User {
         Subject subject = new Subject(subjectCode,subjectTitle);
     }
 
-    public void createTopic(String title, Subject subject) {
-        Topic topic = new Topic(title);
-        subject.addTopic(topic);
+    public void createWeek(String title, Subject subject) {
+        Week week = new Week(title);
+        subject.addWeek(week);
+    }
+
+    public void createAttendance(){
+        
     }
 
     public double getParticipation(Student student) {

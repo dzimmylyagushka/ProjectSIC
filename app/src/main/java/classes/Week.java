@@ -8,20 +8,19 @@ import java.util.ArrayList;
  * Created by Beng Haun on 2/12/2017.
  */
 
-public class Topic {
+public class Week {
 
     String title;
     ArrayList<Question> questions = new ArrayList<>();
     String key;
-    boolean isLive = false;
 
-    public Topic(){
+    public Week(){
         //default constructor for Firebase
     }
 
 
 
-    public Topic(String title) {
+    public Week(String title) {
         this.title = title;
     }
 
@@ -37,17 +36,13 @@ public class Topic {
         Log.i("debugAddQn",this.getKey());
     }
 
-    public void toggleLive() {
-        if (isLive){
-            isLive = false;
-        }
-        else isLive=true;
+    public void addFeedback(Feedback feedback){
+
     }
 
-    public void setIsLive(boolean isLive) {
-        this.isLive = isLive;
-    }
+    public void removeFeedback(Feedback feedback){
 
+    }
 
     public void removeQuestion(Question question) {
         for (int i =0; i<questions.size();i++){
@@ -68,6 +63,4 @@ public class Topic {
     public String getKey() {
         return key;
     }
-    public boolean isLive(){ return isLive;}
-    public boolean getIsLive(){return isLive;}
 }

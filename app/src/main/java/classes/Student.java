@@ -5,12 +5,6 @@ package classes;
  */
 import android.util.Log;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -76,9 +70,9 @@ public class Student extends User {
     //invoker type (Student or Teacher).
     //questionsMap : Hash map that contains course code and the corresponding number of questions
     //answersMap : Hash map that contains course code and the corresponding number of answers
-    public String[] calculateScore(ArrayList<Topic> allTopics,String type) {
+    public String[] calculateScore(ArrayList<Week> allWeeks, String type) {
         Map<String, Integer> qnsForCourses = new HashMap<>();
-        for (Topic t : allTopics) {
+        for (Week t : allWeeks) {
             String key = t.getKey().split(" ")[0];
             if (questionsMap.containsKey(key)) {
                 if (qnsForCourses.containsKey(key)){
@@ -100,7 +94,7 @@ public class Student extends User {
 
         //Get answer score
         Map<String,Integer> ansForCourses = new HashMap<>();
-        for (Topic t: allTopics){
+        for (Week t: allWeeks){
             String key = t.getKey().split(" ")[0];
             if (answersMap.containsKey(key)){
                 ArrayList<Question> qns = t.getQuestions();

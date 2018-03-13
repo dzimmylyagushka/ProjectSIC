@@ -12,8 +12,8 @@ public class Subject {
 
     String subjectCode;
     String subjectTitle;
-    ArrayList<Topic> topics = new ArrayList<>();
-    static ArrayList<Topic> allTopics = new ArrayList<>();
+    ArrayList<Week> weeks = new ArrayList<>();
+    static ArrayList<Week> allWeeks = new ArrayList<>();
     static Map<String,Integer> totalStudentsByCourse = new HashMap<>();
     int totalStudents = 0;
 
@@ -27,16 +27,16 @@ public class Subject {
         totalStudentsByCourse.put(subjectCode,0);
     }
 
-    public void addTopic(Topic topic) {
-        topic.setKey(getKey()+" "+topic.getTitle());
-        topics.add(topic);
-        allTopics.add(topic);
+    public void addWeek(Week week) {
+        week.setKey(getKey()+" "+ week.getTitle());
+        weeks.add(week);
+        allWeeks.add(week);
     }
 
-    public void removeTopic(Topic topic){
-        for (int i = 0; i < topics.size(); i++){
-            if (topics.get(i).getKey().matches(topic.getKey())){
-                topics.remove(i);
+    public void removeWeek(Week week){
+        for (int i = 0; i < weeks.size(); i++){
+            if (weeks.get(i).getKey().matches(week.getKey())){
+                weeks.remove(i);
             }
         }
     }
@@ -71,8 +71,8 @@ public class Subject {
         return subjectTitle;
     }
 
-    public ArrayList<Topic> getTopics() {
-        return topics;
+    public ArrayList<Week> getWeeks() {
+        return weeks;
     }
 
 }
