@@ -28,15 +28,29 @@ public class Teacher extends User {
         subject.addWeek(week);
     }
 
-    public void createAttendance(){
-        
+    public void removeWeek(String title, Subject subject){
+        Week week = new Week(title);
+        subject.removeWeek(week);
     }
 
-    public double getParticipation(Student student) {
-        return student.participation;
+    public Integer[] getStudentAttendance(int studentID){
+
     }
 
-    public void markasCompleted(Question question) {
+    public Integer[][] getTotalAttendance(){
+
+    }
+
+    public float getStudentPerformance(int studentID){
+
+    }
+
+    public float[] getTotalPerformance(){
+
+    }
+
+
+    public void markAsCompleted(Question question) {
         question.close();
     }
 }

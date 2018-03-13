@@ -1,5 +1,8 @@
 package classes;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,6 +49,16 @@ public class Subject {
         }
         else{
             totalStudentsByCourse.put(key,1);
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.N)
+    public void removeStudent(String key){
+        if(totalStudentsByCourse.containsKey(key)){
+            totalStudentsByCourse.remove(key,totalStudentsByCourse.get(key)-1);
+        }
+        else{
+            totalStudentsByCourse.remove(key,-1);
         }
     }
 

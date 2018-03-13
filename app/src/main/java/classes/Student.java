@@ -3,23 +3,17 @@ package classes;
 /**
  * Created by Beng Haun on 2/12/2017.
  */
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Student extends User {
-    double participation;
-    int student_id;
-    int replies_count;
-    int questions_count;
+    int studentID;
     Map<String,Integer> questionsMap = new HashMap<>();  //Subjects and no of questions asked
     Map<String,Integer> answersMap = new HashMap<>();    //Subjects and answers added
     Map<String,Double> scoresQn  = new HashMap<>();
     Map<String,Double> scoresAns  = new HashMap<>();
     Map<String,Double> finalGrade = new HashMap<>();
-    ArrayList<String> notifications = new ArrayList<>(); //list of notifications for student
 
     public Student(){
         super();
@@ -37,33 +31,6 @@ public class Student extends User {
         subject.addStudent(subject.getKey());
     }
 
-
-
-    public void addNotification(String notification){
-        Log.i("notifDebug", "Notification added");
-        notifications.add(notification);
-    }
-
-    public void removeNotification(String notification){
-        notifications.remove(notification);
-    }
-
-    //Getter and setter for questions_count
-    public int getTotalQuestionsAsked(){
-        questions_count = 0;
-        for (Integer s: questionsMap.values()){
-            questions_count += s;
-        }
-        return questions_count;
-    }
-
-    public int getTotalReplies(){
-        replies_count = 0;
-        for (Integer s: answersMap.values()) {
-            replies_count += s;
-        }
-        return replies_count;
-    }
 
 
     //This function calculates the student grades. The second argument determines the grades for
@@ -174,7 +141,6 @@ public class Student extends User {
     }
 
     //public getters and setters for Firebase
-    public double getParticipation(){return participation;}
     public Map<String, Integer> getQuestionMap() {
         return questionsMap;
     }
@@ -231,38 +197,13 @@ public class Student extends User {
         this.answersMap = answersMap;
     }
 
-    public int getReplies_count() {
 
-        return replies_count;
+    public int getStudentID(){
+        return studentID;
     }
 
-    public void setReplies_count(int replies_count) {
-        this.replies_count = replies_count;
-    }
-
-    public int getQuestions_count() {
-        return questions_count;
-    }
-
-    public void setQuestions_count(int questions_count) {
-        this.questions_count = questions_count;
-    }
-
-    public ArrayList<String> getNotifications() {
-
-        return notifications;
-    }
-
-    public void setNotifications(ArrayList<String> notifications) {
-        this.notifications = notifications;
-    }
-
-    public int getStudent_id(){
-        return student_id;
-    }
-
-    public void setStudent_id(int student_id){
-        this.student_id = student_id;
+    public void setStudentID(int studentID){
+        this.studentID = studentID;
     }
 
 }

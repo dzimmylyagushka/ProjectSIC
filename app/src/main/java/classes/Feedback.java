@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Feedback {
 
-    int understand = 0;
-    int dont_understand = 0;
+    int rating;
+    int dontUnderstand = 0;
     ArrayList<Student> voted = new ArrayList<>();
     String key;
     public Feedback(){
@@ -20,23 +20,24 @@ public class Feedback {
         key = question.getKey();
     }
 
-    public void incUnderstand(Student user){
-        voted.add(user);
-        understand+=1;
-    }
 
     public void decUnderstand(Student user){
-        dont_understand+=1;
+        dontUnderstand+=1;
         voted.add(user);
     }
 
     //public getters for Firebase
-    public int getUnderstand() {
-        return understand;
+
+    public int getDontUnderstand() {
+        return dontUnderstand;
     }
 
-    public int getDont_understand() {
-        return dont_understand;
+    public int getRating(){
+        return rating;
+    }
+
+    public void setRating(int rating){
+        rating = rating;
     }
 
     public ArrayList<Student> getVoted() {
