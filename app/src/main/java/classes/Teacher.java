@@ -49,6 +49,10 @@ public class Teacher extends User {
 
     }
 
+    public void startQuiz(Question question){
+        question.open();
+    }
+
 
     public void markAsCompleted(Question question) {
         question.close();

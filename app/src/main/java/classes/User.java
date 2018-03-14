@@ -2,7 +2,6 @@ package classes;
 
 import java.util.ArrayList;
 
-/* TODO: Implement these classes. */
 
 public abstract class User {
 

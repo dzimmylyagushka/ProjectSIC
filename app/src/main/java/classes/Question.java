@@ -26,7 +26,7 @@ public class Question {
     HashMap<String,String> animalMap = new HashMap<>();
     ArrayList<String> animalList = new ArrayList<>();
     boolean isClosed = false;
-    boolean isLive = false;
+    boolean isOpened = false;
     boolean feedback = false;
 
     public Question(){//default constructor for Firebase
@@ -48,25 +48,6 @@ public class Question {
 
     }
 
-    public void upVote(User user) {
-        votes+=1;
-        upVoted.add(user.getUid());
-    }
-
-    public void downVote(User user) {
-        votes -= 1;
-        downVoted.add(user.getUid());
-    }
-
-    public void removeUpVote(User user) {
-        votes-=1;
-        upVoted.remove(user.getUid());
-    }
-
-    public void removeDownVote(User user) {
-        votes+=1;
-        downVoted.remove(user.getUid());
-    }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void addAnswer(Answer answer) {
@@ -83,7 +64,13 @@ public class Question {
 
     }
 
+    public void open(){
+        isClosed = false;
+        isOpened = true;
+    }
+
     public void close() {
+        isOpened = false;
         isClosed = true;
     }
 
@@ -100,10 +87,6 @@ public class Question {
 
     public void setKey(String k){
         this.key = k;
-    }
-
-    public void setIsLive(boolean isLive) {
-        this.isLive = isLive;
     }
 
     public void setFeedback(boolean fb){
@@ -167,12 +150,6 @@ public class Question {
     }
 
     public String getKey(){return key;}
-
-    public boolean isLive() {
-        return isLive;
-    }
-
-    public boolean getIsLive(){return isLive;}
 
     public boolean isFeedback() {
         return feedback;
