@@ -11,8 +11,8 @@ public class Teacher extends User {
         //default constructor for Firebase
     }
 
-    public Teacher(String emailAdr,String uid) {
-        super(emailAdr, uid);
+    public Teacher(String username,String uid) {
+        super(username, uid);
     }
 
     public void addSubject(Subject subject){
@@ -33,21 +33,21 @@ public class Teacher extends User {
         subject.removeWeek(week);
     }
 
-    public Integer[] getStudentAttendance(int studentID){
+    //public Integer[] getStudentAttendance(int studentID){
 
-    }
+    //}
 
-    public Integer[][] getTotalAttendance(){
+    //public Integer[][] getTotalAttendance(){
 
-    }
+    //}
 
-    public float getStudentPerformance(int studentID){
+    //public float getStudentPerformance(int studentID){
 
-    }
+    //}
 
-    public float[] getTotalPerformance(){
+    //public float[] getTotalPerformance(){
 
-    }
+    //}
 
     public void startQuiz(Question question){
         question.open();

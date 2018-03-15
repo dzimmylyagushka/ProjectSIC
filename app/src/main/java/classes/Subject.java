@@ -55,10 +55,7 @@ public class Subject {
     @TargetApi(Build.VERSION_CODES.N)
     public void removeStudent(String key){
         if(totalStudentsByCourse.containsKey(key)){
-            totalStudentsByCourse.remove(key,totalStudentsByCourse.get(key)-1);
-        }
-        else{
-            totalStudentsByCourse.remove(key,-1);
+            totalStudentsByCourse.remove(key);
         }
     }
 

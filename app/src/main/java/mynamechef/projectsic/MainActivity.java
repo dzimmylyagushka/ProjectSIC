@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String ACCESSTOKEN = "5wKAV011pZAAAAAAAAAAcbtN8QDnISQNco0kl_88zkA4WdQGXSYwxLiC1v4xAoVR";
     private DropboxAPI.UploadRequest request;
 
-    public static String path = getAssets().toString()  ;//Environment.getDataDirectory().getAbsolutePath() + "/Downloads/";
+    public static String path = Environment.getDataDirectory().getAbsolutePath() + "/Downloads/"; //getAssets().toString()  ;
     public static File Dir = new File(path);
 
     @Override

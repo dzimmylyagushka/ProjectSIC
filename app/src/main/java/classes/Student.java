@@ -19,8 +19,8 @@ public class Student extends User {
         super();
         //public constructor for Firebase
     }
-    public Student(String email_add, String uid) {
-        super(email_add, uid);
+    public Student(String username, String uid) {
+        super(username, uid);
     }
 
     public void addSubject(Subject subject){
