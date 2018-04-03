@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     static DropboxAPI<AndroidAuthSession> dropboxAPI;
     private static final String APP_KEY = "uli22ywt0ycnpil";
     private static final String APP_SECRET = "m7ben3wso7vmes7";
-    private static final String ACCESSTOKEN = "5wKAV011pZAAAAAAAAAAcbtN8QDnISQNco0kl_88zkA4WdQGXSYwxLiC1v4xAoVR";
+    private static final String ACCESSTOKEN = "5wKAV011pZAAAAAAAAAAdx5pMAbuJoUSuU1YFh0qakKTulhvwfRWbOGMwJgvX5Jl";
     private DropboxAPI.UploadRequest request;
 
     public static String path = Environment.getDataDirectory().getAbsolutePath() + "/Downloads/"; //getAssets().toString()  ;
