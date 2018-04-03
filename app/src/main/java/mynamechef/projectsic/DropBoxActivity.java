@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,7 +23,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class DropBoxActivity extends AppCompatActivity {
 
 
     public static Button upload;
@@ -32,14 +31,14 @@ public class MainActivity extends AppCompatActivity {
     public static Button uploadApp;
     public static PDFView pdfview;
 
-    static DropboxAPI<AndroidAuthSession> dropboxAPI;
+    private static DropboxAPI<AndroidAuthSession> dropboxAPI;
     private static final String APP_KEY = "uli22ywt0ycnpil";
     private static final String APP_SECRET = "m7ben3wso7vmes7";
     private static final String ACCESSTOKEN = "5wKAV011pZAAAAAAAAAAdx5pMAbuJoUSuU1YFh0qakKTulhvwfRWbOGMwJgvX5Jl";
     private DropboxAPI.UploadRequest request;
 
-    public static String path = Environment.getDataDirectory().getAbsolutePath() + "/Downloads/"; //getAssets().toString()  ;
-    public static File Dir = new File(path);
+    public String path = this.getFilesDir().getAbsolutePath() + "/Downloads/"; //getAssets().toString()  ;
+    public File Dir = new File(path);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
